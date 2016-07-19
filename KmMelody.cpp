@@ -41,7 +41,7 @@ void KmMelody::play(String req){
     x=req.charAt(i);
     
     if(x==","){
-      Secs[j]=s; if(f==15){Freq[j]=36;}else{Freq[j]=(c*11)+f;} Duty[j]=d; Max=j+1;
+      Secs[j]=s; if(f==15){Freq[j]=36;}else{Freq[j]=(c*12)+f;} Duty[j]=d; Max=j+1;
       j++; if(j>DATA_SIZE){break;}
       s=Base; f=3; d=400; c=1;
     }else{
@@ -50,7 +50,7 @@ void KmMelody::play(String req){
       else if(x=="2"){s=Base*2;} else if(x=="3"){s=Base*3;} else if(x=="4"){s=Base*4;}
 
       else if(x=="a"){f=0;} else if(x=="b"){f=2;} else if(x=="c"){f=3;} else if(x=="d"){f=5;}
-      else if(x=="e"){f=7;} else if(x=="f"){f=8;} else if(x=="g"){i=10;}
+      else if(x=="e"){f=7;} else if(x=="f"){f=8;} else if(x=="g"){f=10;}
       else if(x=="+"){f=f+1;} else if(x=="-"){f=f-1;}
       else if(x=="H"){c=2;} else if(x=="L"){c=0;} else if(x=="O"){c=3;}
       else if(x=="x"){f=15;}
@@ -59,7 +59,7 @@ void KmMelody::play(String req){
       else if(x=="D"){d=60;} else if(x=="E"){d=80;}
 
     }
-    Secs[j]=s; if(f==15){Freq[j]=36;}else{Freq[j]=(c*11)+f;} Duty[j]=d; Max=j+1;
+    Secs[j]=s; if(f==15){Freq[j]=36;}else{Freq[j]=(c*12)+f;} Duty[j]=d; Max=j+1;
     if(Max>0){Index=0;}
   }
 
